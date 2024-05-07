@@ -1,0 +1,4 @@
+
+/.venv
+dataProcessing/__pycache__/*
+graphUI/__pycache__/*
