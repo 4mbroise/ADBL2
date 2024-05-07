@@ -8,5 +8,5 @@
 ### Start the App
 `streamlit run app.py`
 
-### Configure LLMs used by ADBL2
+### Configure your ADBL2 instance to use your LLMs 
 Please adapt the configuration file **models.json** to your configuration
