@@ -1,0 +1,4 @@
+CMAKE_ARGS="-DLLAMA_CUDA=on" pip install llama-cpp-python
+pip install sentencepiece
+pip install lmql[hf]
+

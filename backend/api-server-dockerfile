@@ -1,0 +1,17 @@
+FROM python:3.10.14-alpine
+
+COPY backend/ backend/
+
+WORKDIR backend/src
+
+RUN apk add cmake
+RUN apk add alpine-sdk
+RUN pip install --upgrade pip
+RUN pip install lmql fastapi transformers sentencepiece
+
+COPY backend/entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+EXPOSE 10250
+
+CMD fastapi run app.py --port 10250 --host 0.0.0.0

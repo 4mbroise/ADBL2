@@ -1,0 +1,47 @@
+{
+    "mistral-7B-v0.1 Fine Tuned": {
+        "display_name": "mistral-7B-v0.1 Fine Tuned",
+        "modelType": "transformers",
+        "isLlamaCppModel": false,
+        "local": true,
+        "tokenizer": "/home2/efaugier/models/fine-tune-mistral-7B",
+        "modelPath": "/home2/efaugier/models/fine-tune-mistral-7B",
+        "promptTemplate": "Mistral"
+    },
+    "mistral-7B-v0.1": {
+        "display_name": "mistral-7B-v0.1",
+        "modelType": "transformers",
+        "isLlamaCppModel": false,
+        "local": true,
+        "tokenizer": "mistralai/Mistral-7B-v0.1",
+        "modelPath": "mistralai/Mistral-7B-v0.1",
+        "promptTemplate": "Mistral"
+    },
+    "mistral-7B-instruct-v0.1-fp16": {
+        "display_name": "mistral-7B-instruct-v0.1-fp16",
+        "modelType": "llamaCpp",
+        "isLlamaCppModel": true,
+        "local": true,
+        "tokenizer": "/home2/efaugier/models/Mistral-7B-Instruct-v0.1",
+        "modelPath": "/home2/efaugier/models/Mistral-7B-Instruct-v0.1/mistral-7B-instruct-v0.1-fp16.gguf",
+        "promptTemplate": "Mistral"
+    },
+    "Fine Tuned Gemma-2B": {
+        "display_name": "Fine Tuned Gemma-2B",
+        "modelType": "transformers",
+        "isLlamaCppModel": false,
+        "local": true,
+        "tokenizer": "philschmid/gemma-tokenizer-chatml",
+        "modelPath": "/home2/efaugier/models/fine-tune-gemma-2B",
+        "promptTemplate": "ChatML"
+    },
+    "gemma-2b": {
+        "display_name": "Gemma-2B",
+        "modelType": "transformers",
+        "isLlamaCppModel": false,
+        "local": false,
+        "tokenizer": "google/gemma-2b",
+        "modelPath": "google/gemma-2b",
+        "promptTemplate": "ChatML"
+    }
+}

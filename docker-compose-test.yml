@@ -1,0 +1,15 @@
+version: "1"
+services:
+  ping:
+    image: briceburg/ping-pong:latest
+    ports:
+      - 7000:80
+  api:
+    image: 4mbroise/adbl2:api
+    ports:
+      - 10250:10250 
+  frontend:
+    image: 4mbroise/adbl2:ui-local
+    ports:
+      - 27019:27019
+  

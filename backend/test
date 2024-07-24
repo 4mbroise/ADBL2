@@ -1,0 +1,15 @@
+#FROM 4mbroise/adbl2:latest
+FROM ubuntu:jammy
+
+
+WORKDIR /
+RUN ls
+
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["nvidia-smi"]
+
+#CMD ["huggingface-cli", "login", "--token", "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"]
+# CMD ["lmql", "serve-model", "google/gemma-2b", "--host", "0.0.0.0", "--port", "4000", "--cuda"]

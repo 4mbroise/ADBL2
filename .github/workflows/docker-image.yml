@@ -1,0 +1,91 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  # build-lmql:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Delete huge unnecessary tools folder
+  #     run: rm -rf /opt/hostedtoolcache
+  #   - uses: actions/checkout@v4
+  #   - name: Build the Docker image
+  #     run: docker build . --file ./backend/lmql-server-dockerfile --tag ${{ secrets.USERNAME }}/adbl2:lmql
+  #   - name: login to docker Hub
+  #     run: docker login --username ${{ secrets.USERNAME }} --password ${{ secrets.PASSWORD }}
+  #   - name: push
+  #     run: docker push ${{ secrets.USERNAME }}/adbl2:lmql
+
+  build-lmql-cpu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete huge unnecessary tools folder
+      run: rm -rf /opt/hostedtoolcache
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file ./backend/lmql-server-cpu-dockerfile --tag ${{ secrets.USERNAME }}/adbl2:lmql-cpu
+    - name: login to docker Hub
+      run: docker login --username ${{ secrets.USERNAME }} --password ${{ secrets.PASSWORD }}
+    - name: push
+      run: docker push ${{ secrets.USERNAME }}/adbl2:lmql-cpu
+
+  build-lmql-gpu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete huge unnecessary tools folder
+      run: rm -rf /opt/hostedtoolcache
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file ./backend/lmql-server-gpu-dockerfile --tag ${{ secrets.USERNAME }}/adbl2:lmql-gpu
+    - name: login to docker Hub
+      run: docker login --username ${{ secrets.USERNAME }} --password ${{ secrets.PASSWORD }}
+    - name: push
+      run: docker push ${{ secrets.USERNAME }}/adbl2:lmql-gpu
+
+  build-frontend:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete huge unnecessary tools folder
+      run: rm -rf /opt/hostedtoolcache
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file ./adbl2/Dockerfile --tag ${{ secrets.USERNAME }}/adbl2:ui
+    - name: login to docker Hub
+      run: docker login --username ${{ secrets.USERNAME }} --password ${{ secrets.PASSWORD }}
+    - name: push
+      run: docker push ${{ secrets.USERNAME }}/adbl2:ui
+
+  build-frontend-local:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete huge unnecessary tools folder
+      run: rm -rf /opt/hostedtoolcache
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file ./adbl2/Dockerfile-local --tag ${{ secrets.USERNAME }}/adbl2:ui-local
+    - name: login to docker Hub
+      run: docker login --username ${{ secrets.USERNAME }} --password ${{ secrets.PASSWORD }}
+    - name: push
+      run: docker push ${{ secrets.USERNAME }}/adbl2:ui-local
+
+  build-api:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete huge unnecessary tools folder
+      run: rm -rf /opt/hostedtoolcache
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file ./backend/api-server-dockerfile --tag ${{ secrets.USERNAME }}/adbl2:api
+    - name: login to docker Hub
+      run: docker login --username ${{ secrets.USERNAME }} --password ${{ secrets.PASSWORD }}
+    - name: push
+      run: docker push ${{ secrets.USERNAME }}/adbl2:api
+  #     run: docker-compose build
+  #   - name: login to docker Hub
+  #     run: docker login --username ${{ secrets.USERNAME }} --password ${{ secrets.PASSWORD }}
+    

@@ -1,4 +1,8 @@
-
-/.venv
-dataProcessing/__pycache__/*
-graphUI/__pycache__/*
+backend/bin/*
+backend/include/*
+backend/lib/*
+backend/lib64/*
+backend/share/*
+backend/pyvenv.cfg
+backend/lib64
+*.pyc

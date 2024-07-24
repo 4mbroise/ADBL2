@@ -1,0 +1,36 @@
+{   
+    "ADBL2_Mistral-7b-fine-tuned": {
+        "display_name": "ADBL2 Mistral 7B fine tuned",
+        "modelType": "transformers",
+        "isLocal": false,
+        "tokenizer": "4mbroise/ADBL2-Mistral-7B",
+        "modelPath": "4mbroise/ADBL2-Mistral-7B",
+        "promptTemplate": "Mistral"
+    },
+    "gemma-2b": {
+        "display_name": "Gemma-2B",
+        "modelType": "transformers",
+        "isLocal": false,
+        "tokenizer": "google/gemma-2b",
+        "modelPath": "google/gemma-2b",
+        "promptTemplate": "ChatML"
+    },
+    "gpt2-medium": {
+        "display_name": "GPT2 medium",
+        "modelType": "transformers",
+        "isLocal": false,
+        "tokenizer": "gpt2-medium",
+        "modelPath": "gpt2-medium",
+        "promptTemplate": "ChatML"
+    },
+    "mistral-7B-instruct-v0.1-fp16": {
+        "display_name": "mistral-7B-instruct-v0.1-fp16",
+        "modelType": "llamaCpp",
+        "isLlamaCppModel": true,
+        "isLocal": true,
+        "tokenizer": "mistralai/Mistral-7B-Instruct-v0.2",
+        "modelPath": "/models/mistral-7b-instruct-v0.2.Q5_K_M.gguf",
+        "downloadUrl": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q5_K_M.gguf",
+        "promptTemplate": "Mistral"
+    }
+}

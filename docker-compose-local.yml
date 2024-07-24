@@ -1,0 +1,16 @@
+version: "1"
+services:
+  lmql:
+    image: 4mbroise/adbl2:lmql-gpu
+    ports:
+      - 4000:4000
+  
+  api:
+    image: 4mbroise/adbl2:api
+    ports:
+      - 10250:10250 
+  
+  frontend:
+    image: 4mbroise/adbl2:ui-local
+    ports:
+      - 27019:27019

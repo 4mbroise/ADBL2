@@ -1,0 +1,32 @@
+version: "1"
+services:
+  lmql:
+    image: 4mbroise/adbl2:lmql-gpu
+    ports:
+      - 4000:4000
+    environment:
+      - http_proxy=http://proxy.univ-lyon1.fr:3128
+      - https_proxy=http://proxy.univ-lyon1.fr:3128
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+  
+  api:
+    image: 4mbroise/adbl2:api
+    ports:
+      - 10250:10250 
+    environment:
+      - http_proxy=http://proxy.univ-lyon1.fr:3128
+      - https_proxy=http://proxy.univ-lyon1.fr:3128
+  
+  frontend:
+    image: 4mbroise/adbl2:ui
+    ports:
+      - 27019:27019
+    environment:
+      - http_proxy=http://proxy.univ-lyon1.fr:3128
+      - https_proxy=http://proxy.univ-lyon1.fr:3128
